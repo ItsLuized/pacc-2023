@@ -46,7 +46,7 @@ def rain_flow(lat: float, lon: float):
     result = save_rain(rain)
     return result
 
-@flow
+@flow(name="105-weather_pipeline")
 def pipeline(lat: float = 38.9, lon: float = -77.0):
     weather = weather_flow(lat, lon)
     rain = rain_flow(lat, lon)
@@ -55,4 +55,4 @@ def pipeline(lat: float = 38.9, lon: float = -77.0):
 
 
 if __name__ == "__main__":
-    pipeline.serve(name='forecast-pipeline')
+    pipeline()
