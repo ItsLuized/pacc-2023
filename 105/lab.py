@@ -51,7 +51,7 @@ def rain_flow(lat: float, lon: float):
 def pipeline(lat: float = 38.9, lon: float = -77.0):
     weather = weather_flow(lat, lon)
     rain = rain_flow(lat, lon)
-    animal_facts = run_deployment(name="animal_facts/default")
+    animal_facts = run_deployment(name="animal-facts/default")
 
     return [weather, rain, animal_facts]
 
